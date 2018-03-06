@@ -1,2 +1,4 @@
 info:
   profile: default
+form:
+  git: git-dev-1.0
