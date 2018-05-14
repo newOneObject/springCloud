@@ -1,1 +1,2 @@
 from: dev
+max-active: 30
