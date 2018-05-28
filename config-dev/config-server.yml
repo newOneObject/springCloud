@@ -1,0 +1,9 @@
+server:
+  port: 2005
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://111.231.62.224:2000/eureka
+
+

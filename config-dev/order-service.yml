@@ -1,0 +1,90 @@
+server:
+  port: 2001
+
+spring:
+  datasource:
+    url: 'jdbc:mysql://111.231.62.224:3306/xgqoms?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&tinyInt1isBit=false&allowMultiQueries=true'
+    username: admin
+    password: admin
+    driver-class-name: 'com.mysql.jdbc.Driver'
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      #最大连接数
+      max-active: 20
+      #最小连接数#
+      minIdle: 5
+      #获取连接最小等待时间（毫秒）
+      maxWait: 10000
+      #解决Mysql 8小时断开空闲连接的问题
+      validationQuery: SELECT 'x'
+      time-between-eviction-runs-millis: 60000
+  redis:
+    host: 111.231.62.224:6379
+    port: 6379
+    password:
+    pool:
+      max-active: 10
+      max-idle: 5
+      max-wait: -1
+      min-idle: 0
+    timeout: 0
+  #消息总线相关配置
+  rabbitmq:
+    host: 111.231.62.224
+    port: 5672
+    username: huangfeng
+    password: huangfeng123
+#  zipkin:
+#    base-url: http://10.40.254.35:9411
+  #链路追踪采样率，默认0.1 即10次请求只记录一次
+  sleuth:
+    sampler:
+      percentage: 1.0
+#  配置中心
+#  cloud:
+#    config:
+#      uri: http://localhost:2005/
+#      label: master
+#      profile: dev
+
+#mybatis mapper.xml文件扫描
+mybatis:
+  mapper-locations: 'classpath*:/Mapper/*.xml'
+
+#Eureke 客户端注册服务相关配置
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://111.231.62.224:2000/eureka
+
+#链路追踪相关配置
+logging:
+  level:
+    root: info
+    com.icecreamGroup.order.Mapper: debug
+  path: logback-spring.xml
+
+#关闭security相关验证
+management:
+  security:
+    enabled: false
+
+feign:
+  hystrix:
+    enabled: true
+
+#LCN相关配置
+init-db: true
+ribbon:
+  NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+  MaxAutoRetriesNextServer: 0
+
+tm:
+  manager.url: http://111.231.62.224:8899/tx/manager/
+
+
+
+
+
+
+

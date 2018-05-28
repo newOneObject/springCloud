@@ -1,0 +1,12 @@
+server:
+  port: 2007
+spring:
+  rabbitmq:
+      host: 111.231.62.224
+      port: 5672
+      username: huangfeng
+      password: huangfeng123
+  sleuth:
+    sampler:
+      percentage: 1.0
+
