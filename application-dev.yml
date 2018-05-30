@@ -1,3 +1,4 @@
+
 spring:
   profiles:
     active: dev
@@ -29,7 +30,7 @@ spring:
     timeout: 0
   #消息总线相关配置
   rabbitmq:
-    host: 10.40.255.238
+    host: 10.40.253.210
     port: 5672
     username: admin
     password: 123456
@@ -42,7 +43,7 @@ spring:
 #  配置中心
   cloud:
     config:
-      uri: http://localhost:8888/
+      uri: http://10.40.253.210:2005/
       label: master
       profile: dev
 
@@ -50,12 +51,13 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:2000/eureka
+      defaultZone: http://10.40.253.210:2000/eureka
 
 #logback相关配置
 logging:
   level:
     com.icecreamGroup.order.Mapper: debug
+    org.springframwork.cloud.sleuth: debug
 
 
 #关闭security相关验证
