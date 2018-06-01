@@ -29,7 +29,7 @@ spring:
     timeout: 0
   #消息总线相关配置
   rabbitmq:
-    host: 10.40.253.210
+    host: 10.40.254.59
     port: 5672
     username: admin
     password: 123456
