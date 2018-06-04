@@ -48,7 +48,7 @@ eureka:
 #logback相关配置
 logging:
   level:
-    com.icecreamGroup.order.Mapper: debug
+    com.icecreamGroup.order.mapper: debug
 
 
 #关闭security相关验证
