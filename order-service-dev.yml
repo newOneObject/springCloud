@@ -48,6 +48,7 @@ eureka:
 #logback相关配置
 logging:
   level:
+    com.codingapi: debug
     com.icecreamGroup.order.mapper: debug
 
 
