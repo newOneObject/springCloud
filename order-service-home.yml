@@ -19,16 +19,10 @@ spring:
       #解决Mysql 8小时断开空闲连接的问题
       validationQuery: SELECT 'x'
       time-between-eviction-runs-millis: 60000
-  redis:
-    host: 111.231.62.224:6379
-    port: 6379
-    password:
-    pool:
-      max-active: 10
-      max-idle: 5
-      max-wait: -1
-      min-idle: 0
-    timeout: 0
+      initial-size: 2
+      test-on-borrow: false
+      test-while-idle: true
+      pool-prepared-statements: false
   #消息总线相关配置
   rabbitmq:
     host: localhost
