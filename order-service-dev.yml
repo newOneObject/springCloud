@@ -49,7 +49,7 @@ eureka:
 logging:
   level:
     com.codingapi: debug
-    com.icecreamGroup.order.mapper: debug
+    com.icecream.order.mapper: debug
 
 
 #关闭security相关验证
