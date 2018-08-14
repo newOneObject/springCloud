@@ -60,6 +60,13 @@ management:
 feign:
   hystrix:
     enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMillisecondes: 5000
 
 #LCN相关配置
 init-db: true
