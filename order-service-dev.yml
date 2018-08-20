@@ -65,6 +65,10 @@ hystrix:
     default:
       timeout:
         enabled: false
+hystrix:
+  threadpool:
+    default:
+      coreSize: 100        
 #LCN相关配置
 init-db: true
 ribbon:
