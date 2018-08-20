@@ -63,11 +63,8 @@ feign:
 hystrix:
   command:
     default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMillisecondes: 5000
-
+      timeout:
+        enabled: false
 #LCN相关配置
 init-db: true
 ribbon:
