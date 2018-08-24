@@ -34,17 +34,14 @@ spring:
     username: admin
     password: 123456
     listener:
-    #消费者自动启动
-      auto-startup: true
     #消费失败，自动重新入队
       default-requeue-rejected: true
     #启用发送重试
       retry:
         enabled: true
-        initial-interval: 1000
+        initial-interval: 3000
         max-attempts: 3
         multiplier: 1.0
-        max-interval: 10000
   zipkin:
     base-url: http://10.40.253.210:9411
   #链路追踪采样率，默认0.1 即10次请求只记录一次
