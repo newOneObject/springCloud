@@ -28,20 +28,18 @@ spring:
       min-idle: 0
     timeout: 0
   #消息总线相关配置
-  rabbitmq:
-    host: 10.40.254.59
+ rabbitmq:
+    virtual-host: /
     port: 5672
-    username: admin
     password: 123456
+    username: admin
+    host: 10.40.254.59
     listener:
-    #消费失败，自动重新入队
-      default-requeue-rejected: true
-    #启用发送重试
-      retry:
-        enabled: true
-        initial-interval: 3000
-        max-attempts: 3
-        multiplier: 1.0
+      simple:
+        default-requeue-rejected: false
+        retry:
+          max-attempts: 5
+          enabled: true
   zipkin:
     base-url: http://10.40.253.210:9411
   #链路追踪采样率，默认0.1 即10次请求只记录一次
