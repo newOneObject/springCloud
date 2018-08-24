@@ -33,7 +33,13 @@ spring:
     port: 5672
     username: admin
     password: 123456
-   retry:
+    listener:
+    #消费者自动启动
+      auto-startup: true
+    #消费失败，自动重新入队
+      default-requeue-rejected: true
+    #启用发送重试
+      retry:
         enabled: true
         initial-interval: 1000
         max-attempts: 3
