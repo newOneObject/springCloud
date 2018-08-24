@@ -33,13 +33,12 @@ spring:
     port: 5672
     username: admin
     password: 123456
-    listener:
-      simple:
-        retry:
-          max-attempts: 5
-          initial-interval: 3000
-          enabled: false
-        default-requeue-rejected: true
+   retry:
+        enabled: true
+        initial-interval: 1000
+        max-attempts: 3
+        multiplier: 1.0
+        max-interval: 10000
   zipkin:
     base-url: http://10.40.253.210:9411
   #链路追踪采样率，默认0.1 即10次请求只记录一次
